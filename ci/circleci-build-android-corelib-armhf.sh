@@ -6,14 +6,14 @@
 set -xe
 
 sudo apt -q update
-sudo apt install cmake git gettext
+sudo apt install -y cmake git gettext
 
 # Install cloudsmith-cli (for upload) and cryptography (for git-push)
-sudo apt install python3-pip
+sudo apt install -y python3-pip
 python3 -m pip install --user --force-reinstall -q pip setuptools
 sudo apt remove python3-six python3-colorama python3-urllib3
 export LC_ALL=C.UTF-8  LANG=C.UTF-8
-python3 -m pip install --user cloudsmith-cli cryptography
+# python3 -m pip install --user cloudsmith-cli cryptography
 
 # Build corelib
 builddir=build-android-hf
